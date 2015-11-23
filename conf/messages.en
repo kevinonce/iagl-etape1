@@ -1,0 +1,8 @@
+accueil.label=Saved list
+accueil.label.articles=[EN] Les articles enregistrés
+accueil.label.articles.categorie=[EN] Les articles appartenant à la catégorie {0}
+accueil.accueil_view=Your list
+accueil.label.ajout=Add a List
+accueil.label.bouton.creer=Add
+accueil.label.bouton.supprimer=Delete
+accueil.label.bouton.afficher=Show

@@ -1,0 +1,28 @@
+@(listeCourse: List[ListeCourse], formulaireListe: Form[ListeCourse])
+
+@import helper._
+
+@main("Accueil") {
+    <div class="main-container" align="center">
+	@if(listeCourse != null && listeCourse.size > 0){
+        <h1>@Messages("accueil.label")</h1>
+    		@for(liste <- listeCourse) {
+			<div class="liste-container">
+				<h2>@liste.getName() : @liste.getArticles.size() article(s) </h2>
+				<input type="button" onclick="location.href='@{routes.Application.show(liste.getId())}';" value="@Messages("accueil.label.bouton.afficher")")/>
+
+	            @form(routes.Application.deleteList(liste.getId())) {
+                 <input type="submit" value='@Messages("accueil.label.bouton.supprimer")'>
+                }   
+	  		</div>
+		}
+	}
+		<h1>@Messages("accueil.label.ajout")</h1>
+    
+
+	    @form(routes.Application.newList()) {
+	        @inputText(formulaireListe("name"), 'maxlength -> 20, '_label -> Messages("accueil.label.liste"), '_showConstraints -> false)        
+	        <input type="submit" value='@Messages("accueil.label.bouton.creer")'>  
+	    }
+		</div>
+}

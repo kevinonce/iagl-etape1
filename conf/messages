@@ -1,0 +1,18 @@
+main.label=Gestionnaire de listes de course
+accueil.label=Les listes de course enregistrées
+accueil.label.articles=Les articles enregistés
+accueil.label.articles.categorie=Les articles appartenant à la catégorie {0}
+accueil.accueil_view=Votre liste
+accueil.label.ajout=Ajouter une liste
+accueil.label.bouton.creer=Ajouter
+accueil.label.bouton.supprimer=Supprimer
+accueil.label.bouton.afficher=Afficher
+accueil.label.liste=Nom de la liste*
+
+detail.label.retour=Retour
+detail.label.ajout=Ajouter un article à la liste
+detail.label.article=Nom de l'article*
+detail.label.categorie=Catégorie*
+detail.message.article.supprimer=êtes-vous sûr de vouloir supprimer cet article ?
+detail.label.buton.oui=Oui
+detail.label.buton.non=Non

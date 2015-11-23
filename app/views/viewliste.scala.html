@@ -1,0 +1,43 @@
+@(liste: ListeCourse, formulaireArticle: Form[Article])
+
+@import helper._
+
+@scripts = {
+    <script src="@routes.Assets.versioned("javascripts/viewliste.js")" type="text/javascript"></script>
+}
+
+@main("Votre liste", scripts)	{
+
+    <h1>@Messages("accueil.accueil_view")</h1>
+    
+    <div class="main-container" align="center">
+		<div class="liste-container">
+			<h2>@liste.getName()</h2>
+			<ul>
+			@for(article <- liste.getArticles()) {
+		  			<li>@article.getName() <input id="btnDeleteArticle" type="button" onclick="GestionnaireListe.ecrans.viewliste.deleteArticle(@article.getId());" value="@Messages("accueil.label.bouton.supprimer")"/></li>
+		  		}
+			</ul>
+			
+			<input type="button" onclick="location.href='@{routes.Application.index()}';" value='@Messages("detail.label.retour")')/>
+  		</div>
+  		
+  			<h1>@Messages("detail.label.ajout")</h1>
+  		
+  		@form(routes.Application.newArticle(liste.getId())) {
+	        @inputText(formulaireArticle("name"), 'maxlength -> 20, '_label -> Messages("detail.label.article"), '_showConstraints -> false)   
+	       	@inputText(formulaireArticle("categorie"), 'maxlength -> 20, '_label -> Messages("detail.label.categorie"), '_showConstraints -> false)      
+	        <input type="submit" value='@Messages("accueil.label.bouton.creer")'>  
+	    }
+	</div>
+
+	<script type="text/javascript">
+	
+		GestionnaireListe.routes.deleteArticleRoute = '@{routes.Application.deleteArticle()}';
+		GestionnaireListe.messages.deleteArticle = '@Messages("detail.message.article.supprimer")';
+		GestionnaireListe.messages.buton = {};
+		GestionnaireListe.messages.buton.oui = '@Messages("detail.label.buton.oui")';
+		GestionnaireListe.messages.buton.non = '@Messages("detail.label.buton.non")';
+
+	</script>
+}

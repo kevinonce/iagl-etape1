@@ -1,0 +1,5 @@
+accueil.label=Les listes de course enregistrées
+accueil.label.articles=Les articles enregistrés
+accueil.label.articles.categorie=Les articles appartenant à la catégorie {0}
+constraint.required = Champ obligatoire
+error.required = Ce champ doit être renseigné !
